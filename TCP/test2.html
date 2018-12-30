@@ -1,0 +1,56 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.box{
+		font-size:16px;
+		font-weight:700;
+		font-family:Microsoft yahei;
+		font-style: normal;
+		line-height: 40px;
+  
+	}
+	</style>
+	<script type="text/javascript">
+        function show(){
+        var fso, f;
+		var data,sp,sa,da,dp;
+		//data=$("#data").val();
+		data=document.getElementById("data").value;
+	
+		
+		 fso = new ActiveXObject("Scripting.FileSystemObject");        
+    f = fso.OpenTextFile("D:/新建文件夹/tcp.txt",8,true);     
+    f.WriteLine(data);  
+ alert(data);	
+    f.Close(); 
+}
+
+</script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+</head>
+<body background="dag rain.jpg" class="box">
+	<div id="content" align="center">
+	<form  name="myfrom" id="myform" action="" method="post" >
+	<fieldset  width="50" height="20" >tcp头部校验和</fieldset>
+  校验数据: <input type="text" id="data" name="data" />
+  <br>
+  &nbsp; &nbsp;源地址: <input type="text" id="sourceAdress" name="sourceAdress" />
+  <br>
+  源端口号: <input type="text" id="sourcePort" name="sourcePort" />
+  <br>
+  目的地址: <input type="text" id="mudiAdress" name="mudiAdress" />
+  <br>
+  目的端口: <input type="text" id="mudiPort" name="mudiPort" />
+  <br>
+</form>
+  <input type="submit" value="提交" onclick="show()" />
+  <input type="submit" value="关闭" onclick="window.close()" />
+  <a href="D:/新建文件夹/tcp_send.exe">tcp_send</
+	</div>
+		<!-- <div align="center" class="box">
+    	<a href="C:\Users\MIT\Desktop\新建文件夹\tcp_send.exe">tcp_send</a></div> -->
+</body>
+</html>

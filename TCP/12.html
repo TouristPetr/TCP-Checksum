@@ -1,0 +1,62 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+	color:blue;
+	}
+	</style>
+	
+	
+</head>
+<body>
+
+<div style="position:relative;">
+    <img src="C:\Users\MIT\Desktop\新建文件夹\dag rain.jpg" width="1350" height="700"/>
+   
+    	<div align="center" class="box">
+    	<a href="C:\Users\MIT\Desktop\新建文件夹\tcp_send.exe">tcp_send</a></div>
+	</div>
+	
+</html> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+</head>
+<body>
+<script>
+//读文件     
+function readFile(filename){     
+var fso = new ActiveXObject("Scripting.FileSystemObject");     
+var f = fso.OpenTextFile(filename,1);     
+var s = "";     
+while (!f.AtEndOfStream)     
+s += f.ReadLine()+"\n";     
+f.Close();     
+return s;     
+}     
+   
+//写文件     
+function writeFile(filename,filecontent){     
+    var fso, f, s ;     
+    fso = new ActiveXObject("Scripting.FileSystemObject");        
+    f = fso.OpenTextFile(filename,8,true);     
+    f.WriteLine(filecontent);       
+    f.Close();     
+alert('ok');     
+}     
+   
+</script> 
+<form name="saveas" action="" method="post">
+<input type="text" id="in" name="in" />     
+<input type="button" value="Write!" onclick="writeFile('C:\Users\MIT\Desktop\新建文件夹\tcp.txt',document.getElementById('in').value);"/><br><br>     
+<input type="button" value="Read!" onclick="document.getElementById('show').value=readFile('C:\Users\MIT\Desktop\新建文件夹\tcp.txt');"/><br>     
+<textarea id="show" name="show" cols="100" rows="20" >     
+</textarea>    
+</form>
+</body>
